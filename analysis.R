@@ -36,7 +36,7 @@ library(highcharter)
 library(gt)
 library(htmltools)
 library(viridis)
-library(pl)
+library(plotly)
 library(treemap)
 
 
@@ -67,8 +67,14 @@ ggplotly(gg1)
 #some extent compared to the other variables
 
 #scatterplot to visualize above relationship
-scatt <- ggplot(spotify,aes(x = energy, y = loudness)) 
-scatt + geom_point()
+
+scatt <- ggplot(spotify, aes(x = energy, y = loudness)) 
+scatt + 
+  geom_point(color = "#13833c") +  # Set a base color for the points
+  scale_color_viridis_c() +
+  theme(axis.text = element_text(color = "darkgreen"),  
+        axis.title = element_text(color = "darkgreen"))  
+
 #The graph indicates a strong relationship between the audio features energy and loudness
 
 View(spotify)
@@ -107,17 +113,52 @@ ggplot(spotify) + geom_bar(aes(key,fill = key),width = 0.5) +
   theme(axis.text.y = element_text(colour = "darkgreen"))
 
 
+
 # Top 10 Artists by Genre
-top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% group_by(playlist_genre,track_artist) %>% summarise(n = n()) %>% top_n(10, n)
+top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% 
+  group_by(playlist_genre,track_artist) %>% 
+  summarise(n = n()) %>% 
+  top_n(10, n)
 
-tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n", vColor = 'playlist_genre', palette =  viridis(7),title="Top 10 Artists by Genre" )
+tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n", 
+              vColor = 'playlist_genre', palette =  viridis(7),title="Top 10 Artists by Genre" )
   
+# Top 3 Subgenres within each Genre
 
+top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %>% 
+  group_by(playlist_genre,playlist_subgenre) %>% 
+  summarise(n = n()) %>% 
+  top_n(3, n)
+tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n", 
+              vColor = 'playlist_genre', palette =  viridis(7), ,title="Top 3 Subgenres within each Genre" )
 
+# Top 15 Chart-Topping Songs of All Time
+
+popular_artists <- spotify %>%
+  group_by(Songs = track_name) %>%
+  summarise(No_of_tracks = n(), Popularity = mean(track_popularity)) %>%
+  filter(No_of_tracks > 2) %>%
+  arrange(desc(Popularity)) %>%
+  top_n(15, wt = Popularity)
+
+ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top Hit Songs of All Time", x = "Songs", y = "Popularity") +
+  scale_fill_viridis_c(option = "D", direction = -1, alpha = 0.8) +
+  theme(plot.title = element_text(size = 12, face = "bold", colour = "darkgreen"),
+        axis.text.x = element_text(colour = "darkgreen", size = 10),
+        axis.text.y = element_text(colour = "darkgreen"),
+        text = element_text(size = 11, colour = "darkgreen"),
+        legend.title = element_blank(),
+        panel.background = element_rect(fill = "#ebebeb"),
+        plot.background = element_rect(fill = "#ebebeb"),
+        legend.background = element_rect(fill = "#ebebeb"))
+
+ggplotly(popular_artists)
 
 #valence category wise
 spotify$valence.category<- spotify$valence
-View(spotify)
 
 spotify$valence.category[spotify$valence.category >= 0.000 & spotify$valence.category <= 0.350 ] <- "Sad"
 spotify$valence.category[spotify$valence.category >= 0.351 & spotify$valence.category <= 0.700 ] <- "Happy"
@@ -125,7 +166,7 @@ spotify$valence.category[spotify$valence.category >= 0.701 & spotify$valence.cat
 
 spotify$valence.category <- as.factor(spotify$valence.category)
 
-y <- ggplot(spotify) + 
+plot <- ggplot(spotify) + 
   geom_bar(aes(valence.category, fill = valence.category), stat = "count") +
   scale_x_discrete(name = "Valence") +
   scale_y_continuous(name = "Count of Songs") +
@@ -140,7 +181,7 @@ y <- ggplot(spotify) +
   theme(axis.text.x = element_text(colour = "darkgreen",size = 10)) +
   theme(axis.text.y = element_text(colour = "darkgreen"))
 
-ggplotly(y)
+ggplotly(plot)
   
 
 
@@ -198,7 +239,7 @@ wordcloud(words = top_artists$track_artist,
 #### Histogram of Energy Distribution
 spotify$energy_only <- cut(spotify$energy, breaks = 10)
 
-p <- spotify %>%
+plot <- spotify %>%
   ggplot(aes(x = energy_only )) +
   geom_bar(width = 0.7, fill = "darkgreen", colour = "black", stat = "count") +
   scale_x_discrete(name = "Energy") +
@@ -215,7 +256,7 @@ p <- spotify %>%
   theme(legend.background = element_rect(fill = "#ebebeb")) +
   theme(axis.text.y = element_text(colour = "darkgreen"))
 
-ggplotly(p)
+ggplotly(plot)
 
 
 # Box Plot of genre by valence
