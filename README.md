@@ -167,6 +167,33 @@ ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
 ggplotly(popular_artists)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
+<br> <br>
+
+### Top 100 Artists Ranked by Popularity
+
+The wordcloud focuses on identifying and showcasing the top 100 artists based on their popularity within the music dataset. Popularity is determined by the sum of track popularity scores associated with each artist. 
+Exploring these artists allows for a deeper understanding of the musical landscape and provides valuable insights into the artists who have achieved widespread recognition and appreciation.
+
+```r
+top_artists <- spotify %>% 
+  group_by(track_artist) %>% 
+  summarize(popularity = sum(track_popularity)) %>% 
+  arrange(desc(popularity)) %>% 
+  slice_head(n = 100)
+  
+par(bg = "#ebebeb")
+wordcloud(words = top_artists$track_artist, 
+          freq = top_artists$popularity,
+          scale = c(1.6, 0.5), 
+          min.freq = 1, 
+          max.words = 200,
+          random.order = FALSE, 
+          rot.per = 0.35,
+          colors = brewer.pal(12, "Dark2"))
+```
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/533d50d4-c7ff-48bd-bb3f-e8cd76846df2" alt="Screenshot" width="600" height="auto">
+<br> <br>
+
 
 
 
