@@ -326,8 +326,7 @@ color:black!important;
 
 ```{r setup, include=FALSE}
 ```
-```
-```
+
 
 Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
 -----------------------------------------------------------------------
