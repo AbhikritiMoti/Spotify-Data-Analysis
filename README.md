@@ -39,7 +39,7 @@ ggplotly(gg1)
 <br> <br>
 The correlation plot highlights the presence of strong connections among certain variables. To address multicollinearity, it is necessary to either select one variable from the correlated pair or employ dimensionality reduction techniques.
 In this case, the correlation plot indicates a strong relationship between the variables "energy" and "loudness." To further understand this relationship visually, we can plot a scatter plot.
-
+<br> <br>
 ```r
 scatt <- ggplot(spotify,aes(x = energy, y = loudness)) 
 scatt + geom_point()
