@@ -9,31 +9,30 @@ Indeed, this analysis of how attributes like danceability, loudness, speechiness
 With this information, Spotify can better tailor its recommendations, personalized playlists, and promotional efforts to match user preferences and increase engagement. By leveraging data-driven insights, Spotify can optimize its music curation, advertising strategies, and artist promotion, ultimately enhancing the overall user experience and maximizing the platform's potential for both listeners and music creators.
 
 
-## title {.tabset .tabset-fade}
-content above tabbed region.
+# Data Preparation
+For the analysis of songs played on Spotify and the attributes influencing their popularity, the data set provided in the Kaggle will be utilized. This data set is sourced through the spotifyr package, developed by Charlie Thompson, Josiah Parry, Donal Phipps, and Tom Wolff. The spotifyr package facilitates the acquisition of data directly from Spotify's API, making it convenient to gather your own data or obtain generic metadata. If you are interested in collecting your own data, you can refer to the spotifyr program's webpage for guidance on how to do so.
 
-### tab Social-Media
+# Exploratory Data Analysis
+Exploratory Data Analysis (EDA) plays a crucial role in extracting meaningful insights from data, especially before building models. EDA helps uncover relevant information that may not be immediately apparent, allowing us to gain a deeper understanding of the data.
 
-tab content Social-Media
+By conducting EDA, we can identify patterns, trends, and distributions within the data. This can help us discover relationships between variables, such as correlations or dependencies, which can be valuable for modeling purposes.
 
-### tab Contact
+Furthermore, EDA enables us to detect outliers or unusual events that may require special attention or preprocessing. Outliers can significantly impact the performance of models and should be carefully handled. It also aids in data cleansing and preparation by identifying missing values, inconsistencies, or errors. It helps ensure the data is in a suitable format for modeling and minimizes the risk of biased or inaccurate results.
 
-tab content  Contact
+### Correlation Between Features
+We’ll start by looking at the correlation between the variables. Correlation tells us if the variables are interdependent. The magnitude of the correlation helps in determining the relationship’s strength, whilst the sign helps in determining whether the variables are moving in the same direction or in opposite directions
+rewrite in short.
+```r
+corr <- round(cor(spotify[,c(12:13,15:23)]),8)
+gg1 <- ggcorrplot(corr) +
+  ggtitle("Correlation between the variables") +
+  theme(panel.background = element_rect(fill = "#ebebeb")) +
+  theme(plot.background = element_rect(fill = "#ebebeb")) +
+  theme(legend.background = element_rect(fill = "#ebebeb")) +
+  theme(plot.title = element_text(size = 13, face = "bold", colour = "#13833c"),
+        text = element_text(size = 10,colour = "#13833c")) +
+  theme(axis.text.x = element_text(colour = "#13833c", size = 10))+
+  theme(axis.text.y = element_text(colour = "#13833c",size = 10))
 
-### tab Revisions
-
-tab content  Revisions
-
-### tab Articles
-
-tab content  Articles
-
-### tab Skills
-
-tab content  Skills
-
-### tab Insights
-
-tab content  Insights
-
-content below tabbed region
+ggplotly(gg1)
+```
