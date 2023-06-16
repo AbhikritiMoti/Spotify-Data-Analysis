@@ -293,11 +293,53 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 ```
 
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/31f10224-4669-4342-82c0-f1728a621c10" alt="Screenshot" width="auto" height="auto">
-<br> <br>
+<br> <br> <br>
 
 
 # Creating a FlexDashboard
 
+```r
+---
+title: "Spotify Data Analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+
+---
+<style>                     
+.navbar {
+  background-color:#13833c;
+  border-color:black;
+}
+.navbar-brand {
+color:black!important;
+}
+
+.navbar-inverse .navbar-nav>li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #0f0f0f;
+  background-color: #0f0f0f;
+}
+
+</style>  
 
 
+```{r setup, include=FALSE}
+```
 
+Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
+-----------------------------------------------------------------------
+
+### Chart 1
+```{r}
+```   
+ 
+### Chart 2 and so on   
+```{r}
+```
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+### Chart n
+```{r}
+```  
