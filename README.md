@@ -194,6 +194,35 @@ wordcloud(words = top_artists$track_artist,
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/533d50d4-c7ff-48bd-bb3f-e8cd76846df2" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
+### <ins>Analyzing the Energy Distribution in Songs</ins>
+
+The wordcloud focuses on identifying and showcasing the top 100 artists based on their popularity within the music dataset. Popularity is determined by the sum of track popularity scores associated with each artist. 
+Exploring these artists allows for a deeper understanding of the musical landscape and provides valuable insights into the artists who have achieved widespread recognition and appreciation.
+
+```r
+spotify$energy_only <- cut(spotify$energy, breaks = 10)
+plot <- spotify %>%
+  ggplot(aes(x = energy_only )) +
+  geom_bar(width = 0.7, fill = "darkgreen", colour = "black", stat = "count") +
+  scale_x_discrete(name = "Energy") +
+  scale_y_continuous(name = "Count of Songs") +
+  ggtitle("Energy Distribution") +
+  theme_bw() +
+  theme(plot.title = element_text(size = 13, face = "bold", colour = "darkgreen"),
+        text = element_text(size = 11,colour = "darkgreen")) +
+  theme(axis.text.x = element_text(colour = "darkgreen")) +
+  theme(panel.background = element_rect(fill = "#ebebeb"), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
+  theme(plot.background = element_rect(fill = "#ebebeb")) +
+  theme(legend.background = element_rect(fill = "#ebebeb")) +
+  theme(axis.text.y = element_text(colour = "darkgreen"))
+
+ggplotly(plot)
+```
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/bd8bfa89-4dcd-4cc5-8e48-bfb66384d363" alt="Screenshot" width="600" height="auto">
+<br> <br>
+
 
 
 
