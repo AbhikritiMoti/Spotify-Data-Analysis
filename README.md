@@ -78,7 +78,7 @@ ggplotly(x)
 <br> <br>
 
 ### Musical positiveness conveyed by a track
-Valence is a musical feature that refers to the emotional content of a piece of music. It can be described as the positivity or negativity of the emotions expressed in a song. A measure from 0.0 to 1.0 describes the musical positiveness conveyed by a track. We have made different classes like `Valence value < 0.350` as sad, `0.351 < Valence value < 0.701` as happy `Valence value > 0.700` as Euphoric.
+Valence is a musical feature that refers to the emotional content of a piece of music. It can be described as the positivity or negativity of the emotions expressed in a song. A measure from 0.0 to 1.0 describes the musical positiveness conveyed by a track. We have made different classes like `Valence value < 0.350` as sad, `0.351 < Valence value < 0.701` as happy `Valence value > 0.700` as euphoric.
 ```r
 spotify$valence.category<- spotify$valence
 View(spotify)
