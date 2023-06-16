@@ -110,7 +110,7 @@ ggplotly(plot)
 <br> <br>
 
 ### Artists, Genres, Subgenres and Albums 
-Let's analyze the top 10 artists within each genre
+**Let's analyze the top 10 artists within each genre**
 
 ```r
 top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% 
@@ -121,9 +121,9 @@ tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n
   vColor = 'playlist_genre', palette =  viridis(7),title="Top 10 Artists by Genre" )
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/19b016aa-8972-4766-896d-547a72667d34" alt="Screenshot" width="600" height="auto">
-<br>
+<br> <br>
 
-Top 3 Subgenres within each Genre
+**Top 3 Subgenres within each Genre**
 
 ```r
 top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %>% 
