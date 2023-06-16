@@ -36,7 +36,7 @@ gg1 <- ggcorrplot(corr) +
 ggplotly(gg1)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/1489dfd3-9213-4f68-bd6f-0bd8ccbf7ade" alt="Screenshot" width="600" height="auto">
-
+<br>
 The correlation plot highlights the presence of strong connections among certain variables. To address multicollinearity, it is necessary to either select one variable from the correlated pair or employ dimensionality reduction techniques.
 In this case, the correlation plot indicates a strong relationship between the variables "energy" and "loudness." To further understand this relationship visually, we can plot a scatter plot.
 ```r
@@ -45,5 +45,29 @@ scatt + geom_point()
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/cb65dcd3-ba29-43ef-bc42-111082daf86d" alt="Screenshot" width="600" height="auto">
 
-
+### Density Plots of Variables
+To visualize the distribution of the variables energy, danceability, valence, acousticness, speechiness, and liveness, we can plot their density plots together. Since all these variables have the same scale and range from 0 to 1, combining them in a single plot can provide a comprehensive view of their distributions.
+```r
+x<- ggplot(spotify) +
+  geom_density(aes(energy, fill ="energy", alpha = 0.1)) + 
+  geom_density(aes(danceability, fill ="danceability", alpha = 0.1)) + 
+  geom_density(aes(valence, fill ="valence", alpha = 0.1)) + 
+  geom_density(aes(acousticness, fill ="acousticness", alpha = 0.1)) + 
+  geom_density(aes(speechiness, fill ="speechiness", alpha = 0.1)) + 
+  geom_density(aes(liveness, fill ="liveness", alpha = 0.1)) + 
+  scale_x_continuous(name = "Energy, Danceability, Valence, Acousticness, Speechiness, Liveness") +
+  scale_y_continuous(name = "Density") +
+  theme_bw() +
+  ggtitle("Density Plots") +
+  theme(plot.title = element_text(size = 13, face = "bold", colour = "#13833c"),
+        text = element_text(size = 11,colour = "#13833c")) +
+  theme(panel.background = element_rect(fill = "#ebebeb")) +
+  theme(plot.background = element_rect(fill = "#ebebeb")) +
+  theme(legend.background = element_rect(fill = "#ebebeb"))+
+  theme(axis.text.x = element_text(colour = "#13833c",size = 9))+
+  theme(axis.text.y = element_text(colour = "#13833c",size = 9))
+  
+ggplotly(x)
+```
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/2a6463e8-c64f-495b-aecf-37995bdf8935" alt="Screenshot" width="600" height="auto">
 
