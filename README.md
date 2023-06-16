@@ -222,6 +222,37 @@ ggplotly(plot)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/bd8bfa89-4dcd-4cc5-8e48-bfb66384d363" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
+### <ins>Valence Range Across Different Genres</ins>
+
+The box plot analysis examines the relationship between the valence (measure of positivity) of songs and their corresponding genres. Understanding the valence of genres can be beneficial in several ways. It can assist music enthusiasts, researchers, or industry professionals in understanding the emotional appeal and preferences associated with various genres.
+
+```r
+ggplot(spotify, aes(x=valence, y=playlist_genre)) +
+  geom_boxplot(color="black", fill="darkgreen")  +
+  scale_x_continuous(name = "Valence") +
+  scale_y_discrete(name = "Genre") +
+  theme_bw() +
+  ggtitle("Valence of Genre") +
+  
+  theme(plot.title = element_text(size = 14, face = "bold", colour = "darkgreen"),
+        text = element_text(size = 11,colour = "darkgreen")) +
+  theme(legend.title=element_blank()) +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.text.x = element_text(colour = "darkgreen"))+
+  theme(panel.background = element_rect(fill = "#ebebeb"), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
+  theme(plot.background = element_rect(fill = "#ebebeb")) +
+  theme(legend.background = element_rect(fill = "#ebebeb"))+
+  theme(axis.text.y = element_text(colour = "darkgreen"))
+```
+
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/daee2c6c-ddb4-40cc-93e4-a239fd560694" alt="Screenshot" width="600" height="auto">
+<br> <br>
+
+
+
+
 
 
 
