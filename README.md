@@ -295,6 +295,41 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/31f10224-4669-4342-82c0-f1728a621c10" alt="Screenshot" width="auto" height="auto">
 <br> <br> <br>
 
+```yaml
+---
+title: "Tabset Row"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+```
+
+```markdown
+Row 
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+```
+```
+
+```markdown
+Row {.tabset .tabset-fade}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+```   
+```
+
+```markdown
+### Chart 3
+    
+```{r}
+```
+```
 
 # Creating a FlexDashboard
 
