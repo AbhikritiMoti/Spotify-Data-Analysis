@@ -48,6 +48,7 @@ scatt + geom_point()
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/cb65dcd3-ba29-43ef-bc42-111082daf86d" alt="Screenshot" width="600" height="auto">
 <br> <br>
+
 ### Density Plots of Variables
 To visualize the distribution of the variables energy, danceability, valence, acousticness, speechiness, and liveness, we can plot their density plots together. Since all these variables have the same scale and range from 0 to 1, combining them in a single plot can provide a comprehensive view of their distributions.
 ```r
