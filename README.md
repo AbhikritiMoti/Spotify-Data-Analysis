@@ -122,7 +122,8 @@ tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/19b016aa-8972-4766-896d-547a72667d34" alt="Screenshot" width="600" height="auto">
 <br>
-# Top 3 Subgenres within each Genre
+
+Top 3 Subgenres within each Genre
 
 ```r
 top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %>% 
@@ -132,4 +133,5 @@ top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %
 tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n", 
   vColor = 'playlist_genre', palette =  viridis(7), ,title="Top 3 Subgenres within each Genre" )
 ```
-<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/19b016aa-8972-4766-896d-547a72667d34" alt="Screenshot" width="600" height="auto">
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/aa9450ce-f0ae-455b-82c6-42e68959f417" alt="Screenshot" width="600" height="auto">
+
