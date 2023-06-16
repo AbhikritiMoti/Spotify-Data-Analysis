@@ -20,7 +20,7 @@ By conducting EDA, we can identify patterns, trends, and distributions within th
 
 Furthermore, EDA enables us to detect outliers or unusual events that may require special attention or preprocessing. Outliers can significantly impact the performance of models and should be carefully handled. It also aids in data cleansing and preparation by identifying missing values, inconsistencies, or errors. It helps ensure the data is in a suitable format for modeling and minimizes the risk of biased or inaccurate results.
 <br> <br>
-### Correlation Between Features
+### <ins>Correlation Between Features</ins>
 We’ll start by looking at the correlation between the variables. Correlation tells us if the variables are interdependent. The magnitude of the correlation helps in determining the relationship’s strength, whilst the sign helps in determining whether the variables are moving in the same direction or in opposite directions.
 ```r
 corr <- round(cor(spotify[,c(12:13,15:23)]),8)
@@ -53,8 +53,8 @@ scatt +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/b4314a89-3a4d-4d0c-a367-6bd97146d062" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
+### <ins>Genre Distribution</ins>
 
-### Density Plots of Variables
 To visualize the distribution of the variables energy, danceability, valence, acousticness, speechiness, and liveness, we can plot their density plots together. Since all these variables have the same scale and range from 0 to 1, combining them in a single plot can provide a comprehensive view of their distributions.
 ```r
 x<- ggplot(spotify) +
@@ -82,7 +82,7 @@ ggplotly(x)
 
 <br> <br>
 
-### Musical Positiveness Conveyed by Tracks
+### <ins>Musical Positiveness Conveyed by Tracks</ins>
 The musical feature valence represents the emotional content of a song, specifically indicating the positivity or negativity of the expressed emotions. Valence is measured on a scale from 0.0 to 1.0, where a higher value signifies a more positive emotional tone in the music. In our analysis, we have categorized the valence values into distinct classes based on their ranges. Songs with a `Valence value < 0.350` are classified as sad, `0.351 < Valence value < 0.701` are classified as happy `Valence value > 0.700` are classified as euphoric. This categorization enables us to better understand the emotional qualities conveyed by the tracks in our dataset and provides a framework for exploring the relationship between valence and other attributes in the context of music preferences and experiences.
 
 ```r
@@ -114,7 +114,7 @@ ggplotly(plot)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/6be7107f-5dcc-4f77-9a07-dc6db82d11d0" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### Top Genres, Subgenres, and Chart-Topping Songs
+### <ins>Top Genres, Subgenres, and Chart-Topping Songs</ins>
 &#9642; **Let's analyze the top 10 artists within each genre**
 
 ```r
