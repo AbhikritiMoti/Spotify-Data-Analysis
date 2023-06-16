@@ -43,8 +43,12 @@ In this case, the correlation plot indicates a strong relationship between the v
 <br> <br>
 
 ```r
-scatt <- ggplot(spotify,aes(x = energy, y = loudness)) 
-scatt + geom_point()
+scatt <- ggplot(spotify, aes(x = energy, y = loudness)) 
+scatt + 
+  geom_point(color = "#13833c") +  # Set a base color for the points
+  scale_color_viridis_c() +
+  theme(axis.text = element_text(color = "darkgreen",face = "bold"),  
+        axis.title = element_text(color = "darkgreen",face = "bold"))
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/cb65dcd3-ba29-43ef-bc42-111082daf86d" alt="Screenshot" width="600" height="auto">
 <br> <br>
