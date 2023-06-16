@@ -196,8 +196,7 @@ wordcloud(words = top_artists$track_artist,
 
 ### <ins>Analyzing the Energy Distribution in Songs</ins>
 
-The wordcloud focuses on identifying and showcasing the top 100 artists based on their popularity within the music dataset. Popularity is determined by the sum of track popularity scores associated with each artist. 
-Exploring these artists allows for a deeper understanding of the musical landscape and provides valuable insights into the artists who have achieved widespread recognition and appreciation.
+Analyzing the energy distribution of songs can offer several benefits. It allows music enthusiasts, artists, and industry professionals to gain a deeper understanding of listeners' preferences and trends. This information can aid in curating playlists, designing music recommendations, and making informed decisions regarding music production and marketing strategies. 
 
 ```r
 spotify$energy_only <- cut(spotify$energy, breaks = 10)
