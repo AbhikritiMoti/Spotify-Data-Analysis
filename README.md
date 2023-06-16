@@ -250,7 +250,7 @@ ggplot(spotify, aes(x=valence, y=playlist_genre)) +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/daee2c6c-ddb4-40cc-93e4-a239fd560694" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Genre Distribution</ins>
+## <ins>Genre Distribution</ins>
 
 By analyzing the proportion of tracks within each genre, we can gain a better understanding of the diversity and popularity of different music styles.
 
@@ -295,6 +295,8 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/31f10224-4669-4342-82c0-f1728a621c10" alt="Screenshot" width="auto" height="auto">
 <br> <br>
 
+
+#Creating a FlexDashboard
 
 
 
