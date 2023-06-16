@@ -324,8 +324,8 @@ color:black!important;
 
 </style>  
 
-````{r setup, include=FALSE}
-````
+\`\`\`{r setup, include=FALSE}
+```
 
 
 Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
@@ -338,12 +338,11 @@ Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
 ### Chart 2 and so on   
 ```{r}
 ```
-```
 
 Column {data-width=400}
 -----------------------------------------------------------------------
 ### Chart n
 ```{r}
 ```
-```
+
 
