@@ -19,7 +19,7 @@ By conducting EDA, we can identify patterns, trends, and distributions within th
 
 Furthermore, EDA enables us to detect outliers or unusual events that may require special attention or preprocessing. Outliers can significantly impact the performance of models and should be carefully handled. It also aids in data cleansing and preparation by identifying missing values, inconsistencies, or errors. It helps ensure the data is in a suitable format for modeling and minimizes the risk of biased or inaccurate results.
 
-### Correlation Between Features
+## Correlation Between Features
 We’ll start by looking at the correlation between the variables. Correlation tells us if the variables are interdependent. The magnitude of the correlation helps in determining the relationship’s strength, whilst the sign helps in determining whether the variables are moving in the same direction or in opposite directions
 rewrite in short.
 ```r
@@ -37,3 +37,14 @@ gg1 <- ggcorrplot(corr) +
 ggplotly(gg1)
 ```
 ![chrome_f11KKuZhCn](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/1489dfd3-9213-4f68-bd6f-0bd8ccbf7ade)
+The correlation plot highlights the presence of strong connections among certain variables. To address multicollinearity, it is necessary to either select one variable from the correlated pair or employ dimensionality reduction techniques.
+
+In this case, the correlation plot indicates a strong relationship between the variables "energy" and "loudness." To further understand this relationship visually, we can plot a scatter plot.
+```r
+scatt <- ggplot(spotify,aes(x = energy, y = loudness)) 
+scatt + geom_point()
+```
+![rstudio_BB3M5gMk4E](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/cb65dcd3-ba29-43ef-bc42-111082daf86d)
+
+
+
