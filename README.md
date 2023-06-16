@@ -333,7 +333,7 @@ Row {.tabset .tabset-fade}
 
 # Creating a FlexDashboard
 
-```r
+```yaml
 ---
 title: "Spotify Data Analysis"
 output: 
@@ -358,8 +358,8 @@ color:black!important;
 
 </style>  
 
-
 ```{r setup, include=FALSE}
+```
 ```
 
 Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
@@ -367,10 +367,12 @@ Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
 
 ### Chart 1
 ```{r}
-```   
+```
+``` 
  
 ### Chart 2 and so on   
 ```{r}
+```
 ```
 
 Column {data-width=400}
@@ -379,3 +381,4 @@ Column {data-width=400}
 ```{r}
 ```
 ```
+
