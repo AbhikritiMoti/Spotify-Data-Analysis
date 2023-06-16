@@ -87,10 +87,9 @@ View(spotify)
 spotify$valence.category[spotify$valence.category >= 0.000 & spotify$valence.category <= 0.350 ] <- "Sad"
 spotify$valence.category[spotify$valence.category >= 0.351 & spotify$valence.category <= 0.700 ] <- "Happy"
 spotify$valence.category[spotify$valence.category >= 0.701 & spotify$valence.category <= 1.000 ] <- "Euphoric"
-
 spotify$valence.category <- as.factor(spotify$valence.category)
 
-y <- ggplot(spotify) + 
+plot <- ggplot(spotify) + 
   geom_bar(aes(valence.category, fill = valence.category), stat = "count") +
   scale_x_discrete(name = "Valence") +
   scale_y_continuous(name = "Count of Songs") +
@@ -105,6 +104,6 @@ y <- ggplot(spotify) +
   theme(axis.text.x = element_text(colour = "darkgreen",size = 10)) +
   theme(axis.text.y = element_text(colour = "darkgreen"))
 
-ggplotly(y)
+ggplotly(plot)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/6e5bff47-e4ea-471c-9877-d1e8b7fdfee3" alt="Screenshot" width="600" height="auto">
