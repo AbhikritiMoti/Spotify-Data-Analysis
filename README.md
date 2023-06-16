@@ -77,7 +77,7 @@ ggplotly(x)
 
 <br> <br>
 
-### Musical positiveness conveyed by a track
+### Musical Positiveness Conveyed by Tracks
 The musical feature valence represents the emotional content of a song, specifically indicating the positivity or negativity of the expressed emotions. Valence is measured on a scale from 0.0 to 1.0, where a higher value signifies a more positive emotional tone in the music. In our analysis, we have categorized the valence values into distinct classes based on their ranges. Songs with a `Valence value < 0.350` are classified as sad, `0.351 < Valence value < 0.701` are classified as happy `Valence value > 0.700` are classified as euphoric. This categorization enables us to better understand the emotional qualities conveyed by the tracks in our dataset and provides a framework for exploring the relationship between valence and other attributes in the context of music preferences and experiences.
 
 ```r
