@@ -144,6 +144,7 @@ tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n"
 <br> <br>
 
 &#9642; **Top 15 Chart-Topping Songs of All Time**
+
 Exploring the top 15 all-time chart-topping songs.
 Created a bar chart to illustrate song popularity.
 ```r
