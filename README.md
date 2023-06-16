@@ -169,3 +169,11 @@ ggplotly(popular_artists)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
 
+&#9642; This is the first item.
+&#9642; This is the second item.
+&#9642; This is the third item.
+&block; This is the first item.
+&block; This is the second item.
+&block; This is the third item.
+
+
