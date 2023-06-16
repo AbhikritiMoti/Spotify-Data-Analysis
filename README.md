@@ -164,7 +164,6 @@ ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
         plot.background = element_rect(fill = "#ebebeb"),
         legend.background = element_rect(fill = "#ebebeb"))
 
-ggplotly(popular_artists)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
 <br> <br>
@@ -299,50 +298,10 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 
 # Creating a FlexDashboard
 
-```yaml
----
-title: "Spotify Data Analysis"
-output: 
-  flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
 
----
-<style>                     
-.navbar {
-  background-color:#13833c;
-  border-color:black;
-}
-.navbar-brand {
-color:black!important;
-}
+![chrome_iBvtmoYf59](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/7cfa2d47-e570-49dc-8e81-716cf3346e67)
 
-.navbar-inverse .navbar-nav>li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  color: #0f0f0f;
-  background-color: #0f0f0f;
-}
+![rstudio_v1sCC5LapD](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/03aec198-0c85-4fb9-9590-8666beafb681)
 
-</style>  
-
-\`\`\`{r setup, include=FALSE}
-```
-
-
-Column {.tabset .tabset .tabset .tabset .tabset .tabset-fade data-width=700}
------------------------------------------------------------------------
-
-### Chart 1
-````{r}
-````
- 
-### Chart 2 and so on   
-```{r}
-```
-
-Column {data-width=400}
------------------------------------------------------------------------
-### Chart n
-```{r}
-```
 
 
