@@ -281,10 +281,10 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
     legend.text = element_text(color = "#13833c", size = 9),
     legend.box = "horizontal", # Add legend in a box
     legend.box.just = "center", # Align the legend box to the center
-    legend.box.background = element_rect(color = "#13833c", fill = "white"), # Customize the legend box background
+    legend.box.background = element_rect(color = "#13833c", fill = "white"), 
     plot.margin = margin(5, 5, 5, 5)
   ) +
-  scale_fill_manual(values = custom_palette) + # Change pie colors to shades of Spotify green
+  scale_fill_manual(values = custom_palette) +
   theme(panel.grid = element_blank(), 
         panel.border = element_blank(), 
         axis.ticks = element_blank(), 
