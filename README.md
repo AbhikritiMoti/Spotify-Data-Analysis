@@ -255,7 +255,8 @@ ggplot(spotify, aes(x=valence, y=playlist_genre)) +
 By analyzing the proportion of tracks within each genre, we can gain a better understanding of the diversity and popularity of different music styles.
 
 ```r
-custom_palette <- viridis_pal(option = "plasma", direction = -1)(15)
+custom_palette <- c("#1DB954", "#1ED760", "#0d632b", "#063014", "#010904", "#138a3d", "#0b5626", "#004B6B", "#005A5B", "#006954", "#007840", "#20B200", "#4EBA00", "#7DB000", "#A2B500")
+
 
 spoify_genre <- spotify %>% 
   group_by(playlist_genre) %>% 
@@ -264,12 +265,8 @@ spoify_genre <- spotify %>%
 ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) + 
   geom_bar(width = 1, stat = "identity") + 
   coord_polar("y", start = 0) + 
-  geom_text(
-    aes(label = paste(round(Total_number_of_tracks / sum(Total_number_of_tracks) * 100, 1), "%")),
-    position = position_stack(vjust = 0.5),
-    color = "black",  # Change percentage text color to black
-    size = 3
-  ) +
+  geom_text(aes(label = paste(round(Total_number_of_tracks / sum(Total_number_of_tracks) * 100, 1), "%")),
+            position = position_stack(vjust = 0.5), color = "white", size = 3) +
   ggtitle("Proportion of Genres") +
   theme_minimal() +
   theme(
@@ -282,12 +279,19 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
     legend.background = element_rect(fill = "#ebebeb"),
     legend.title = element_blank(),
     legend.text = element_text(color = "#13833c", size = 9),
+    legend.box = "horizontal", # Add legend in a box
+    legend.box.just = "center", # Align the legend box to the center
+    legend.box.background = element_rect(color = "#13833c", fill = "white"), # Customize the legend box background
     plot.margin = margin(5, 5, 5, 5)
   ) +
-  scale_fill_manual(values = custom_palette)
+  scale_fill_manual(values = custom_palette) + # Change pie colors to shades of Spotify green
+  theme(panel.grid = element_blank(), 
+        panel.border = element_blank(), 
+        axis.ticks = element_blank(), 
+        axis.line = element_blank())
 ```
 
-<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/9d9b80c8-9f24-4f0f-b41d-e29bd3cb956e" alt="Screenshot" width="auto" height="auto">
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/31f10224-4669-4342-82c0-f1728a621c10" alt="Screenshot" width="auto" height="auto">
 <br> <br>
 
 
