@@ -133,7 +133,7 @@ top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %
 tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n", 
   vColor = 'playlist_genre', palette =  viridis(7), ,title="Top 3 Subgenres within each Genre" )
 ```
-<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/aa9450ce-f0ae-455b-82c6-42e68959f417" alt="Screenshot" width="600" height="420">
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/aa9450ce-f0ae-455b-82c6-42e68959f417" alt="Screenshot" width="600" height="400">
 <br> <br>
 
 **Top 15 Chart-Topping Songs of All Time**
