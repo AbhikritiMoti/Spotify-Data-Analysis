@@ -169,7 +169,7 @@ ggplotly(popular_artists)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### Top 100 Artists Ranked by Popularity
+### <u> Top 100 Artists Ranked by Popularity </u>
 
 The wordcloud focuses on identifying and showcasing the top 100 artists based on their popularity within the music dataset. Popularity is determined by the sum of track popularity scores associated with each artist. 
 Exploring these artists allows for a deeper understanding of the musical landscape and provides valuable insights into the artists who have achieved widespread recognition and appreciation.
