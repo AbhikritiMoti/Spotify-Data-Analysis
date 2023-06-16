@@ -106,12 +106,11 @@ plot <- ggplot(spotify) +
 
 ggplotly(plot)
 ```
-
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/6be7107f-5dcc-4f77-9a07-dc6db82d11d0" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
 ### Artists, Genres, Subgenres and Albums 
 Let's analyze the top 10 artists within each genre
-![rstudio_61Fymfa8Ze]()
 
 ```r
 top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% group_by(playlist_genre,track_artist) %>% summarise(n = n()) %>% top_n(10, n)
