@@ -134,4 +134,33 @@ tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n"
   vColor = 'playlist_genre', palette =  viridis(7), ,title="Top 3 Subgenres within each Genre" )
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/aa9450ce-f0ae-455b-82c6-42e68959f417" alt="Screenshot" width="600" height="470">
+<br> <br>
+
+**Top 15 Chart-Topping Songs of All Time**
+
+```r
+popular_artists <- spotify %>%
+  group_by(Songs = track_name) %>%
+  summarise(No_of_tracks = n(), Popularity = mean(track_popularity)) %>%
+  filter(No_of_tracks > 2) %>%
+  arrange(desc(Popularity)) %>%
+  top_n(15, wt = Popularity)
+
+ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top Hit Songs of All Time", x = "Songs", y = "Popularity") +
+  scale_fill_viridis_c(option = "D", direction = -1, alpha = 0.8) +
+  theme(plot.title = element_text(size = 12, face = "bold", colour = "darkgreen"),
+        axis.text.x = element_text(colour = "darkgreen", size = 10),
+        axis.text.y = element_text(colour = "darkgreen"),
+        text = element_text(size = 11, colour = "darkgreen"),
+        legend.title = element_blank(),
+        panel.background = element_rect(fill = "#ebebeb"),
+        plot.background = element_rect(fill = "#ebebeb"),
+        legend.background = element_rect(fill = "#ebebeb"))
+
+ggplotly(popular_artists)
+```
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="470">
 
