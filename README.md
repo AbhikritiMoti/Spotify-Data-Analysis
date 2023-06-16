@@ -115,7 +115,7 @@ ggplotly(plot)
 <br> <br>
 
 ### Artists, Genres, Subgenres and Albums 
-**Let's analyze the top 10 artists within each genre**
+&#9642; **Let's analyze the top 10 artists within each genre**
 
 ```r
 top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% 
@@ -128,7 +128,7 @@ tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/19b016aa-8972-4766-896d-547a72667d34" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-**Top 3 Subgenres within each Genre**
+&#9642; **Top 3 Subgenres within each Genre**
 
 ```r
 top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %>% 
@@ -141,7 +141,7 @@ tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n"
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/aa9450ce-f0ae-455b-82c6-42e68959f417" alt="Screenshot" width="600" height="400">
 <br> <br>
 
-&#9642  **Top 15 Chart-Topping Songs of All Time**
+&#9642; **Top 15 Chart-Topping Songs of All Time**
 
 ```r
 popular_artists <- spotify %>%
@@ -169,11 +169,5 @@ ggplotly(popular_artists)
 ```
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
 
-&#9642; This is the first item.
-&#9642; This is the second item.
-&#9642; This is the third item.
-&block; This is the first item.
-&block; This is the second item.
-&block; This is the third item.
 
 
