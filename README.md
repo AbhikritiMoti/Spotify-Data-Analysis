@@ -250,7 +250,45 @@ ggplot(spotify, aes(x=valence, y=playlist_genre)) +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/daee2c6c-ddb4-40cc-93e4-a239fd560694" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
+### <ins>Genre Distribution</ins>
 
+By analyzing the proportion of tracks within each genre, we can gain a better understanding of the diversity and popularity of different music styles.
+
+```r
+custom_palette <- viridis_pal(option = "plasma", direction = -1)(15)
+
+spoify_genre <- spotify %>% 
+  group_by(playlist_genre) %>% 
+  summarise(Total_number_of_tracks = length(playlist_genre))
+
+ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) + 
+  geom_bar(width = 1, stat = "identity") + 
+  coord_polar("y", start = 0) + 
+  geom_text(
+    aes(label = paste(round(Total_number_of_tracks / sum(Total_number_of_tracks) * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "black",  # Change percentage text color to black
+    size = 3
+  ) +
+  ggtitle("Proportion of Genres") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", color = "#13833c"),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.background = element_rect(fill = "#ebebeb"),
+    legend.position = "bottom",
+    legend.background = element_rect(fill = "#ebebeb"),
+    legend.title = element_blank(),
+    legend.text = element_text(color = "#13833c", size = 9),
+    plot.margin = margin(5, 5, 5, 5)
+  ) +
+  scale_fill_manual(values = custom_palette)
+```
+
+<img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/9d9b80c8-9f24-4f0f-b41d-e29bd3cb956e" alt="Screenshot" width="auto" height="auto">
+<br> <br>
 
 
 
