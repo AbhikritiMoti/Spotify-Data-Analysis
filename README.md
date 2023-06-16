@@ -116,8 +116,7 @@ ggplotly(plot)
 
 ### Top Genres, Subgenres, and Chart-Topping Songs
 &#9642; **Let's analyze the top 10 artists within each genre**
-Analyzing the top 10 artists within each genre based on track popularity.
-Utilized a treemap visualization to display the results.
+
 ```r
 top_genre <- spotify %>% select(playlist_genre, track_artist, track_popularity) %>% 
   group_by(playlist_genre,track_artist) %>% 
@@ -130,8 +129,7 @@ tm <- treemap(top_genre, index = c("playlist_genre", "track_artist"), vSize = "n
 <br> <br>
 
 &#9642; **Top 3 Subgenres within each Genre**
-Identifying the top 3 subgenres within each genre based on track popularity.
-Presented the findings using a treemap visualization.
+
 ```r
 top <- spotify %>% select(playlist_genre, playlist_subgenre, track_popularity) %>% 
   group_by(playlist_genre,playlist_subgenre) %>% 
@@ -144,9 +142,6 @@ tm <- treemap(top, index = c("playlist_genre", "playlist_subgenre"), vSize = "n"
 <br> <br>
 
 &#9642; **Top 15 Chart-Topping Songs of All Time**
-
-Exploring the top 15 all-time chart-topping songs.
-Created a bar chart to illustrate song popularity.
 ```r
 popular_artists <- spotify %>%
   group_by(Songs = track_name) %>%
