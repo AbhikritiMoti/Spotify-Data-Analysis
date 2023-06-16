@@ -20,7 +20,7 @@ By conducting EDA, we can identify patterns, trends, and distributions within th
 
 Furthermore, EDA enables us to detect outliers or unusual events that may require special attention or preprocessing. Outliers can significantly impact the performance of models and should be carefully handled. It also aids in data cleansing and preparation by identifying missing values, inconsistencies, or errors. It helps ensure the data is in a suitable format for modeling and minimizes the risk of biased or inaccurate results.
 <br> <br>
-### <ins>Correlation Between Features</ins>
+## Correlation Between Features
 We’ll start by looking at the correlation between the variables. Correlation tells us if the variables are interdependent. The magnitude of the correlation helps in determining the relationship’s strength, whilst the sign helps in determining whether the variables are moving in the same direction or in opposite directions.
 ```r
 corr <- round(cor(spotify[,c(12:13,15:23)]),8)
@@ -114,7 +114,7 @@ ggplotly(plot)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/6be7107f-5dcc-4f77-9a07-dc6db82d11d0" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Top Genres, Subgenres, and Chart-Topping Songs</ins>
+## Top Genres, Subgenres, and Chart-Topping Songs
 &#9642; **Let's analyze the top 10 artists within each genre**
 
 ```r
@@ -296,7 +296,7 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 <br> <br>
 
 
-## Creating a FlexDashboard
+# Creating a FlexDashboard
 
 
 
