@@ -53,7 +53,7 @@ scatt +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/b4314a89-3a4d-4d0c-a367-6bd97146d062" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Genre Distribution</ins>
+## Genre Distribution
 
 To visualize the distribution of the variables energy, danceability, valence, acousticness, speechiness, and liveness, we can plot their density plots together. Since all these variables have the same scale and range from 0 to 1, combining them in a single plot can provide a comprehensive view of their distributions.
 ```r
@@ -82,7 +82,7 @@ ggplotly(x)
 
 <br> <br>
 
-### <ins>Musical Positiveness Conveyed by Tracks</ins>
+## Musical Positiveness Conveyed by Tracks
 The musical feature valence represents the emotional content of a song, specifically indicating the positivity or negativity of the expressed emotions. Valence is measured on a scale from 0.0 to 1.0, where a higher value signifies a more positive emotional tone in the music. In our analysis, we have categorized the valence values into distinct classes based on their ranges. Songs with a `Valence value < 0.350` are classified as sad, `0.351 < Valence value < 0.701` are classified as happy `Valence value > 0.700` are classified as euphoric. This categorization enables us to better understand the emotional qualities conveyed by the tracks in our dataset and provides a framework for exploring the relationship between valence and other attributes in the context of music preferences and experiences.
 
 ```r
@@ -169,7 +169,7 @@ ggplotly(popular_artists)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/282146dd-7d0c-4a84-9fbb-4fb1abf30320" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Top 100 Artists Ranked by Popularity</ins>
+## Top 100 Artists Ranked by Popularity
 
 The wordcloud focuses on identifying and showcasing the top 100 artists based on their popularity within the music dataset. Popularity is determined by the sum of track popularity scores associated with each artist. 
 Exploring these artists allows for a deeper understanding of the musical landscape and provides valuable insights into the artists who have achieved widespread recognition and appreciation.
@@ -194,7 +194,7 @@ wordcloud(words = top_artists$track_artist,
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/533d50d4-c7ff-48bd-bb3f-e8cd76846df2" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Analyzing the Energy Distribution in Songs</ins>
+## Analyzing the Energy Distribution in Songs
 
 Analyzing the energy distribution of songs can offer several benefits. It allows music enthusiasts, artists, and industry professionals to gain a deeper understanding of listeners' preferences and trends. This information can aid in curating playlists, designing music recommendations, and making informed decisions regarding music production and marketing strategies. 
 
@@ -222,7 +222,7 @@ ggplotly(plot)
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/bd8bfa89-4dcd-4cc5-8e48-bfb66384d363" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-### <ins>Valence Range Across Different Genres</ins>
+## Valence Range Across Different Genres
 
 The box plot analysis examines the relationship between the valence (measure of positivity) of songs and their corresponding genres. Understanding the valence of genres can be beneficial in several ways. It can assist music enthusiasts, researchers, or industry professionals in understanding the emotional appeal and preferences associated with various genres.
 
@@ -250,7 +250,7 @@ ggplot(spotify, aes(x=valence, y=playlist_genre)) +
 <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/daee2c6c-ddb4-40cc-93e4-a239fd560694" alt="Screenshot" width="600" height="auto">
 <br> <br>
 
-## <ins>Genre Distribution</ins>
+## Genre Distribution
 
 By analyzing the proportion of tracks within each genre, we can gain a better understanding of the diversity and popularity of different music styles.
 
@@ -296,7 +296,7 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 <br> <br>
 
 
-#Creating a FlexDashboard
+## Creating a FlexDashboard
 
 
 
