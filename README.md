@@ -255,7 +255,8 @@ ggplot(spotify, aes(x=valence, y=playlist_genre)) +
 By analyzing the proportion of tracks within each genre, we can gain a better understanding of the diversity and popularity of different music styles.
 
 ```r
-custom_palette <- c("#1DB954", "#1ED760", "#0d632b", "#063014", "#010904", "#138a3d", "#0b5626", "#004B6B", "#005A5B", "#006954", "#007840", "#20B200", "#4EBA00", "#7DB000", "#A2B500")
+custom_palette <- c("#1DB954", "#1ED760", "#0d632b", "#063014", "#010904", "#138a3d", "#0b5626", 
+  "#004B6B", "#005A5B", "#006954", "#007840", "#20B200", "#4EBA00", "#7DB000", "#A2B500")
 
 
 spoify_genre <- spotify %>% 
