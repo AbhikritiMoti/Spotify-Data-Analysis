@@ -298,6 +298,7 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 
 # Creating a FlexDashboard
 
+This layout maximizes page utilization and highlights a primary chart on the left, accompanied by two secondary charts on the right. Each column is assigned a data-width attribute to determine its relative size.
 
 <p align="center">
     <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/7cfa2d47-e570-49dc-8e81-716cf3346e67" alt="Image">
