@@ -94,7 +94,7 @@ popular_artists <- spotify %>%
   arrange(desc(Popularity)) %>%
   top_n(15, wt = Popularity)
 
-ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
+plot <- ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   labs(title = "Top Hit Songs of All Time", x = "Songs", y = "Popularity") +
@@ -107,6 +107,12 @@ ggplot(popular_artists, aes(x = Songs, y = Popularity, fill = Popularity)) +
         panel.background = element_rect(fill = "#ebebeb"),
         plot.background = element_rect(fill = "#ebebeb"),
         legend.background = element_rect(fill = "#ebebeb"))
+
+plotly_plot <- ggplotly(plot)
+
+plotly_plot
+
+
 
 ```
 
@@ -143,7 +149,7 @@ wordcloud(words = top_artists$track_artist,
 ```{r}
 #valence category wise
 spotify$valence.category<- spotify$valence
-View(spotify)
+
 spotify$valence.category[spotify$valence.category >= 0.000 & spotify$valence.category <= 0.350 ] <- "Sad"
 spotify$valence.category[spotify$valence.category >= 0.351 & spotify$valence.category <= 0.700 ] <- "Happy"
 spotify$valence.category[spotify$valence.category >= 0.701 & spotify$valence.category <= 1.000 ] <- "Euphoric"
