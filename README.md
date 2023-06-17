@@ -298,11 +298,11 @@ ggplot(spoify_genre, aes(x = "", y = "", fill = playlist_genre)) +
 
 # Creating a FlexDashboard
 
-<div style="text-align: center;">
-    <img src="[image.png](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/7cfa2d47-e570-49dc-8e81-716cf3346e67)" alt="Image" />
-</div>
 
-![chrome_iBvtmoYf59](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/7cfa2d47-e570-49dc-8e81-716cf3346e67)
+<p align="center">
+    <img src="https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/7cfa2d47-e570-49dc-8e81-716cf3346e67" alt="Image">
+</p>
+
 
 ![rstudio_v1sCC5LapD](https://github.com/AbhikritiMoti/Spotify-Data-Analysis/assets/73769937/03aec198-0c85-4fb9-9590-8666beafb681)
 
